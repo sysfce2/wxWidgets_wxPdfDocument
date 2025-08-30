@@ -757,7 +757,7 @@ wxPdfDCImpl::DoDrawSpline(const wxPointList* points)
   by3 = by2 = cy1;
   m_pdfDocument->CurveTo(bx1, by1, bx2, by2, bx3, by3);
 
-#if !wxUSE_STL
+#if !wxUSE_STL && !wxCHECK_VERSION(3,3,0)
   while ((node = node->GetNext()) != NULL)
 #else
   while ((node = node->GetNext()))
